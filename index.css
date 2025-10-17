@@ -1,0 +1,168 @@
+body {
+    margin: 0 auto;
+    font-family: "Smythe", system-ui;
+    max-width: 500px;
+} 
+
+header {
+    height: clamp(10.5rem, 25vw, 15rem);
+    background-image: url('/imgs/hamburger.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-weight: 400;
+}
+
+.header-text-container {
+    margin-left: 50px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header-text-container h1 {
+    margin: 0 0 10px 0;
+    font-size: 3.2rem;
+}
+
+.header-text-s h2 {
+    margin: 0;
+}
+
+
+.product-container {
+    position: relative;
+    padding: 45px;
+    display: flex;
+    box-sizing: content-box;
+}
+
+.product-container::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    left: 50;
+    right: 50;
+    bottom: 0;
+    background-color: gainsboro;
+}
+
+.product-container img{
+    height: 80px;
+    width: 80px;
+}
+
+.product-container-text {
+    margin-left: 30px;
+}
+
+h3{
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.product-container-text p{
+    font-size: 1.1rem;
+    margin: 5px 0 0 0;
+    color: grey;
+}
+
+.product-container-text h4{
+    font-size: 1.4rem;
+    margin: 10px 0 0 0;
+}
+
+.product-container button{
+    height: 50px;
+    width: 50px;
+    margin: auto 0px auto auto;
+    background-color: transparent;
+    border: solid 2px gainsboro;
+    border-radius: 50%;
+    font-size: 30px;
+    font-family: serif;
+}
+
+.order-checkout {
+    position: fixed;
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+    bottom: 0;
+    padding: 45px;
+}
+
+.order-checkout-title {
+    margin-bottom: 0.7em;
+    text-align: center;
+}
+
+.order-products-list-container {
+    margin-bottom: 30px;
+}
+
+.order-products-list {
+    display: flex;
+    align-items: center;
+}
+
+.order-products-list h3 {
+    font-size: 1.4rem;
+}
+
+.order-products-list button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0 0 0 10px ;
+    transform: translateY(2px);
+    cursor: pointer;
+}
+
+.order-product-price {
+    margin-left: auto;
+}
+
+.order-checkout-price-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-checkout-price {
+    font-size: 1.4rem;
+    margin-bottom: 1.5em;
+}
+
+.complete-order-btn {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.8em;
+    border: none;
+    background-color: #16DB99;
+    color: white;
+    font-weight: 600;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.order-checkout-close {
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    transform: rotate(90deg);
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.3s;
+    color: gray;
+}
+
+.order-checkout-close:hover {
+    background-color: gainsboro;
+    transition: all 0.3s;
+}
