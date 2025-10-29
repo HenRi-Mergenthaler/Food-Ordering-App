@@ -4,21 +4,18 @@ const productsListContainer = document.getElementById("products-list-container")
 const orderMenuDiv = document.getElementById("order-checkout")
 const orderProductsListContainer = document.getElementById("order-products-list-container")
 const orderMenuOutterContainer = document.getElementById("order-menu-outter-container")
+const payForm = document.getElementById("pay-form")
 const closeOrderMenuBtn = document.getElementById("order-checkout-close")
 const openOrderMenuBtn = document.getElementById("open-cart-btn")
 const completeOrderBtn = document.getElementById("complete-order-btn")
 const orderMenuCloseBtn = document.getElementById("order-menu-close-btn")
-const orderMenuPayBtn = document.getElementById("order-menu-pay-btn")
+const reloadBtn = document.getElementById("reload-btn")
 
 const cart = new Set()
 
-closeOrderMenuBtn.addEventListener("click", () => {
-    toggleCartView(true)
-})
+closeOrderMenuBtn.addEventListener("click", () => { toggleCartView(true) })
 
-openOrderMenuBtn.addEventListener("click", () => {
-    toggleCartView(false)
-})
+openOrderMenuBtn.addEventListener("click", () => { toggleCartView(false) })
 
 completeOrderBtn.addEventListener("click", () => {
     if(!cart.size) {
@@ -26,6 +23,7 @@ completeOrderBtn.addEventListener("click", () => {
     } else {
         document.getElementById("complete-order-warning").style.display = "none"
         orderMenuOutterContainer.style.display = "flex"
+        toggleCartView(true)
     }
 })
 
@@ -33,8 +31,14 @@ orderMenuCloseBtn.addEventListener("click", () => {
     orderMenuOutterContainer.style.display = "none"
 })
 
-orderMenuPayBtn.addEventListener("click", () => {
-    
+payForm.addEventListener("submit", event => {
+    document.getElementById("buy-message-container").style.display = "block"
+    orderMenuOutterContainer.style.display = "none"
+    event.preventDefault()
+})
+
+reloadBtn.addEventListener("click", () => {
+    window.location.reload()
 })
 
 document.addEventListener("mousedown", event => {

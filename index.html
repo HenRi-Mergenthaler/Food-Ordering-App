@@ -50,7 +50,7 @@
             <div class="order-menu-background"></div>
             <div class="order-menu-inner-container">
                 <h3>Enter card details</h3>
-                <form action="">
+                <form action="" id="pay-form">
                     <input type="text" placeholder="Enter your name" aria-label="Name input" required>
                     <input type="number" placeholder="Enter your card number" aria-label="Card number input" required>
                     <input type="number" placeholder="Enter your CVV" aria-label="CVV input" required>
@@ -60,8 +60,9 @@
             </div>
         </div>
 
-        <div class="buy-message-container">
+        <div class="buy-message-container" id="buy-message-container">
             <h2>Thanks, James! Your order is on its way!</h2>
+            <button class="reload-btn" id="reload-btn">Reload</button>
         </div>
     </main>
 

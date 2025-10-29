@@ -287,3 +287,19 @@ h3{
     padding: 20px 40px;
     margin: 0;
 }
+
+.reload-btn {
+    font-size: 1rem;
+    padding: 6px 25px;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    background-color: rgb(181, 243, 163);
+    color: green;
+    cursor: pointer;
+}
+
+.reload-btn:hover {
+    background-color: rgb(101, 187, 75);
+    color: white;
+}
