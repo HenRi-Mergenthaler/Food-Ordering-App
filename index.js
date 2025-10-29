@@ -8,6 +8,7 @@ const closeOrderMenuBtn = document.getElementById("order-checkout-close")
 const openOrderMenuBtn = document.getElementById("open-cart-btn")
 const completeOrderBtn = document.getElementById("complete-order-btn")
 const orderMenuCloseBtn = document.getElementById("order-menu-close-btn")
+const orderMenuPayBtn = document.getElementById("order-menu-pay-btn")
 
 const cart = new Set()
 
@@ -30,6 +31,10 @@ completeOrderBtn.addEventListener("click", () => {
 
 orderMenuCloseBtn.addEventListener("click", () => {
     orderMenuOutterContainer.style.display = "none"
+})
+
+orderMenuPayBtn.addEventListener("click", () => {
+    
 })
 
 document.addEventListener("mousedown", event => {

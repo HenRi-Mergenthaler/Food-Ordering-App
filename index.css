@@ -2,6 +2,7 @@ body {
     margin: 0 auto;
     font-family: "Smythe", system-ui;
     max-width: 500px;
+    position: relative;
 } 
 
 header {
@@ -188,7 +189,7 @@ h3{
 }
 
 .open-cart-btn {
-    position: fixed;
+    position: absolute;
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -267,4 +268,22 @@ h3{
     position: absolute;
     top: 10px;
     right: 10px;
+}
+
+.buy-message-container {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: #ECFDF5;
+    border-radius: 4px;
+    color: #065F46;
+    box-shadow: 5px 5px 350px black;
+    text-align: center;
+}
+
+.buy-message-container h2 {
+    padding: 20px 40px;
+    margin: 0;
 }

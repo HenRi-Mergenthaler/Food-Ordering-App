@@ -1,60 +1,72 @@
 <html>
-    <head>
-       <link rel="stylesheet" href="index.css">
-       <!-- Google Font -->
-       <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
-    </head>
-    <body>
 
-        <header>
-            <div class="header-text-container">
-                <h1>Jimmy’s Diner</h1>
-                <h2>The best burgers and pizzas in town.</h2>
+<head>
+    <link rel="stylesheet" href="index.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-text-container">
+            <h1>Jimmy’s Diner</h1>
+            <h2>The best burgers and pizzas in town.</h2>
+        </div>
+    </header>
+
+    <main>
+        <div class="products-list-container" id="products-list-container">
+
+        </div>
+
+        <div class="order-checkout close" id="order-checkout">
+            <h3 class="order-checkout-title">Your Order</h3>
+            <div class="order-products-list-container" id="order-products-list-container">
             </div>
-        </header>
-
-        <main>
-            <div class="products-list-container" id="products-list-container">
-
+            <hr>
+            <div class="order-checkout-price-container">
+                <h3 class="order-checkout-price">Final Price:</h3>
+                <h3 class="order-checkout-price">$14</h3>
             </div>
+            <p class="complete-order-warning" id="complete-order-warning">Add itens on your cart first.</p>
+            <button class="complete-order-btn" id="complete-order-btn">Complete Order</button>
 
-            <div class="order-checkout close" id="order-checkout">
-                <h3 class="order-checkout-title">Your Order</h3>
-                <div class="order-products-list-container" id="order-products-list-container">
-                </div>
-                <hr>
-                <div class="order-checkout-price-container">
-                    <h3 class="order-checkout-price">Final Price:</h3>
-                    <h3 class="order-checkout-price">$14</h3>
-                </div>
-                <p class="complete-order-warning" id="complete-order-warning">Add itens on your cart first.</p>
-                <button class="complete-order-btn" id="complete-order-btn">Complete Order</button>
+            <button class="order-checkout-close" id="order-checkout-close">></button>
+        </div>
+        <button class="open-cart-btn" id="open-cart-btn">
+            <svg width="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                    <path
+                        d="M6.29977 5H21L19 12H7.37671M20 16H8L6 3H3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z"
+                        stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+            </svg>
+        </button>
 
-                <button class="order-checkout-close" id="order-checkout-close">></button>
+        <div class="order-menu-outter-container" id="order-menu-outter-container">
+            <div class="order-menu-background"></div>
+            <div class="order-menu-inner-container">
+                <h3>Enter card details</h3>
+                <form action="">
+                    <input type="text" placeholder="Enter your name" aria-label="Name input" required>
+                    <input type="number" placeholder="Enter your card number" aria-label="Card number input" required>
+                    <input type="number" placeholder="Enter your CVV" aria-label="CVV input" required>
+                    <button class="order-menu-pay-btn" id="order-menu-pay-btn" type="submit">Pay</button>
+                </form>
+                <button class="order-menu-close-btn" id="order-menu-close-btn">X</button>
             </div>
-            <button class="open-cart-btn" id="open-cart-btn">
-                <svg
-                width="40px"
-                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6.29977 5H21L19 12H7.37671M20 16H8L6 3H3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-            </button>
+        </div>
 
-            <div class="order-menu-outter-container" id="order-menu-outter-container">
-                <div class="order-menu-background"></div>
-                <div class="order-menu-inner-container">
-                    <h3>Enter card details</h3>
-                    <form action="">
-                        <input type="text" placeholder="Enter your name" aria-label="Name input" required>
-                        <input type="number" placeholder="Enter your card number" aria-label="Card number input" required>
-                        <input type="number" placeholder="Enter your CVV"aria-label="CVV input" required>
-                        <button class="order-menu-pay-btn" type="submit">Pay</button>
-                    </form>
-                    <button class="order-menu-close-btn" id="order-menu-close-btn">X</button>
-                </div>
-            </div>
-        </main>
+        <div class="buy-message-container">
+            <h2>Thanks, James! Your order is on its way!</h2>
+        </div>
+    </main>
 
 
-	<script type="module" src="index.js"></script>
-    </body>
+    <script type="module" src="index.js"></script>
+</body>
+
 </html>
-
