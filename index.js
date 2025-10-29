@@ -3,24 +3,40 @@ import { menuArray } from "./data.js"
 const productsListContainer = document.getElementById("products-list-container")
 const orderMenuDiv = document.getElementById("order-checkout")
 const orderProductsListContainer = document.getElementById("order-products-list-container")
+const orderMenuOutterContainer = document.getElementById("order-menu-outter-container")
 const closeOrderMenuBtn = document.getElementById("order-checkout-close")
 const openOrderMenuBtn = document.getElementById("open-cart-btn")
+const completeOrderBtn = document.getElementById("complete-order-btn")
+const orderMenuCloseBtn = document.getElementById("order-menu-close-btn")
 
 const cart = new Set()
 
 closeOrderMenuBtn.addEventListener("click", () => {
-    orderMenuDiv.classList.toggle("close")
-    openOrderMenuBtn.style.display = "block"
+    toggleCartView(true)
 })
 
 openOrderMenuBtn.addEventListener("click", () => {
-    orderMenuDiv.classList.toggle("close")
-    openOrderMenuBtn.style.display = "none"
+    toggleCartView(false)
+})
+
+completeOrderBtn.addEventListener("click", () => {
+    if(!cart.size) {
+        document.getElementById("complete-order-warning").style.display = "block"
+    } else {
+        document.getElementById("complete-order-warning").style.display = "none"
+        orderMenuOutterContainer.style.display = "flex"
+    }
+})
+
+orderMenuCloseBtn.addEventListener("click", () => {
+    orderMenuOutterContainer.style.display = "none"
 })
 
 document.addEventListener("mousedown", event => {
     if(event.target.dataset.buttonId != undefined) {
         addToCart(event.target.dataset.buttonId)
+    } else if ( event.target.dataset.removeBtn != undefined){
+        removeFromCart(event.target.dataset.removeBtn)
     }
 })
 
@@ -46,6 +62,22 @@ function renderItems() {
 function addToCart(productId) {
     cart.add(productId)
     renderCartItems()
+    toggleCartView()
+}
+
+function toggleCartView(closed=false) {
+    if(closed) {
+        orderMenuDiv.classList.add("close")
+        openOrderMenuBtn.style.display = "block"
+    } else {
+        orderMenuDiv.classList.remove("close")
+        openOrderMenuBtn.style.display = "none"
+    }
+}
+
+function removeFromCart(id) {
+    cart.delete(id)
+    renderCartItems()
 }
 
 function renderCartItems() {
@@ -54,7 +86,7 @@ function renderCartItems() {
         htmlSnippet += `
         <div class="order-products-list">
             <h3>${menuArray.find(obj => obj.id == element).name}</h3>
-            <button>remove</button>
+            <button data-remove-btn="${element}">remove</button>
             <h3 class="order-product-price">$${menuArray.find(obj => obj.id == element).price}</h3>
         </div>`
     })

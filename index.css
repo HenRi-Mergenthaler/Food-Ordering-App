@@ -161,6 +161,11 @@ h3{
     cursor: pointer;
 }
 
+.complete-order-warning {
+    display: none;
+    color: red;
+}
+
 .order-checkout-close {
     height: 35px;
     width: 35px;
@@ -183,7 +188,6 @@ h3{
 }
 
 .open-cart-btn {
-    display: none;
     position: fixed;
     width: 60px;
     height: 60px;
@@ -199,4 +203,68 @@ h3{
     background-color: rgb(190, 190, 190);
     transition: all 0.3s;
     transform: scale(1.07);
+}
+
+.order-menu-outter-container {
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.083);
+    inset: 0;
+}
+
+.order-menu-inner-container {
+    width: 400px;
+    position: relative;
+    background-color: white;
+    box-shadow: 5px 5px 250px rgba(0, 0, 0, 0.5);
+}
+
+.order-menu-inner-container h3 {
+    margin: 30px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.6rem;
+}
+
+.order-menu-inner-container form {
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.order-menu-inner-container form input {
+    padding: 15px 10px;
+    font-size: 1rem;
+}
+
+.order-menu-pay-btn {
+    padding: 0.6em;
+    font-size: 1.2rem;
+    background-color: #16DB99;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.order-menu-close-btn {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red !important;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
